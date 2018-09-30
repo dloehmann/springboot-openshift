@@ -1,0 +1,6 @@
+node('java') {
+  stage 'build'
+  openshiftBuild(buildConfig: 'springboot-test', showBuildLogs: 'true')
+  stage 'deploy'
+  openshiftDeploy(deploymentConfig: 'springboot-test')
+}
